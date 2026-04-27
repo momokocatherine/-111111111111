@@ -5,7 +5,7 @@ import pandas as pd
 # --- 網頁基本設定 ---
 st.set_page_config(page_title="通勤單字刷題與複習 App", layout="centered")
 
-# --- 1. 單字資料庫 (加入動詞辭書形 jisho) ---
+# --- 1. 單字資料庫 ---
 if "vocab_data" not in st.session_state:
     st.session_state.vocab_data = {
         "第14課": [
@@ -21,7 +21,7 @@ if "vocab_data" not in st.session_state:
             {"word": "よびます I (呼びます)", "meaning": "叫", "jisho": "よぶ (呼ぶ)"},
             {"word": "はなします I (話します)", "meaning": "說", "jisho": "はなす (話す)"},
             {"word": "つかいます I (使います)", "meaning": "使用", "jisho": "つかう (使う)"},
-            {"word": "とめます II (止めます)", "meaning": "停止", "jisho": "とめる (止める)"},
+            {"word": "とめます II (止めます)", "meaning": "停止", "jisho": "投める (止める)"},
             {"word": "みせます II (見せます)", "meaning": "出示、給～人看", "jisho": "みせる (見せる)"},
             {"word": "おしえます II (教えます)", "meaning": "告訴〔地址〕、教", "jisho": "おしえる (教える)"},
             {"word": "すわります I (座ります)", "meaning": "坐", "jisho": "すわる (座る)"},
@@ -73,8 +73,8 @@ if "vocab_data" not in st.session_state:
             {"word": "けいざい (経済)", "meaning": "經濟"},
             {"word": "しやくしょ (市役所)", "meaning": "市政府、市公所"},
             {"word": "こうこう (高校)", "meaning": "高中"},
-            {"word": "はいしゃ (歯医者)", "meaning": "牙醫"},
-            {"word": "どくしん (独身)", "meaning": "單身、未婚"},
+            {"word": "はいしゃ (歯醫者)", "meaning": "牙醫"},
+            {"word": "どくしん (獨身)", "meaning": "單身、未婚"},
             {"word": "すみません", "meaning": "對不起、抱歉"},
             {"word": "おもいだします I (思い出します) 【會話】", "meaning": "想起", "jisho": "おもいだす (思い出す)"},
             {"word": "いらっしゃいます I 【會話】", "meaning": "有、在", "jisho": "いらっしゃる"},
@@ -95,14 +95,14 @@ if "vocab_data" not in st.session_state:
             {"word": "おします I (押します)", "meaning": "按、壓、推", "jisho": "おす (押す)"},
             {"word": "のみます I (飲みます)", "meaning": "喝、喝酒", "jisho": "のむ (飲む)"},
             {"word": "はじめます II (始めます)", "meaning": "開始", "jisho": "はじめる (始める)"},
-            {"word": "けんがくします III (見学します)", "meaning": "參觀", "jisho": "けんがくする (見学する)"},
+            {"word": "けん가くします III (見學します)", "meaning": "參觀", "jisho": "けんがくする (見學する)"},
             {"word": "でんわします III (電話します)", "meaning": "打電話", "jisho": "でんわする (電話する)"},
             {"word": "わかい (若い)", "meaning": "年輕"},
             {"word": "ながい (長い)", "meaning": "長"},
             {"word": "みじかい (短い)", "meaning": "短"},
             {"word": "あかるい (明るい)", "meaning": "明亮"},
             {"word": "くらい (暗い)", "meaning": "昏暗"},
-            {"word": "からだ (体)", "meaning": "身體"},
+            {"word": "からだ (體)", "meaning": "身體"},
             {"word": "あたま (頭)", "meaning": "頭、頭腦"},
             {"word": "かみ (髪)", "meaning": "頭髮"},
             {"word": "かお (顔)", "meaning": "臉"},
@@ -115,7 +115,7 @@ if "vocab_data" not in st.session_state:
             {"word": "あし (足)", "meaning": "腳、腿"},
             {"word": "せ (背)", "meaning": "身高"},
             {"word": "サービス", "meaning": "服務"},
-            {"word": "ジョギング", "meaning": "慢跑（〜を します：慢跑）"},
+            {"word": "ジョギング", "meaning": "慢跑"},
             {"word": "シャワー", "meaning": "淋浴"},
             {"word": "みどり (緑)", "meaning": "綠色、綠意"},
             {"word": "［お］てら (［お］寺)", "meaning": "寺廟"},
@@ -140,7 +140,7 @@ if "vocab_data" not in st.session_state:
             {"word": "フランケン 【關聯單語】", "meaning": "法蘭克尼亞（德國的地名）"},
             {"word": "ベラクルス 【關聯單語】", "meaning": "維拉克魯茲（墨西哥的地名）"},
             {"word": "うめだ (梅田) 【關聯單語】", "meaning": "梅田（大阪的地名）"},
-            {"word": "だいがくまえ (大学前) 【關聯單語】", "meaning": "大學前（虛構的公車站名）"}
+            {"word": "だいがくまえ (大學前) 【關聯單語】", "meaning": "大學前（虛構的公車站名）"}
         ],
         "第17課": [
             {"word": "おぼえます II (覚えます)", "meaning": "記住", "jisho": "おぼえる (覚える)"},
@@ -149,25 +149,25 @@ if "vocab_data" not in st.session_state:
             {"word": "はらいます I (払います)", "meaning": "支付、付款", "jisho": "はらう (払う)"},
             {"word": "かえします I (返します)", "meaning": "歸還、退回", "jisho": "かえす (返す)"},
             {"word": "でかけます II (出かけます)", "meaning": "出門、外出", "jisho": "でかける (出かける)"},
-            {"word": "ぬぎます I (脱ぎます)", "meaning": "脫（衣服、鞋等）", "jisho": "ぬぐ (脱ぐ)"},
+            {"word": "ぬぎます I (脫ぎます)", "meaning": "脫（衣服、鞋等）", "jisho": "ぬぐ (脫ぐ)"},
             {"word": "もって いきます I (持って 行きます)", "meaning": "帶、拿去", "jisho": "もって いく (持って 行く)"},
-            {"word": "もって きます III (持って 来ます)", "meaning": "帶、拿來", "jisho": "もって くる (持って 来る)"},
+            {"word": "もって きます III (持って 來ます)", "meaning": "帶、拿來", "jisho": "もって くる (持って 來る)"},
             {"word": "しんぱいします III (心配します)", "meaning": "擔心", "jisho": "しんぱいする (心配する)"},
-            {"word": "ざんぎょうします III (残業します)", "meaning": "加班", "jisho": "ざんぎょうする (残業する)"},
+            {"word": "ざんぎょうします III (殘業します)", "meaning": "加班", "jisho": "ざんぎょうする (殘業する)"},
             {"word": "しゅっちょうします III (出張します)", "meaning": "出差", "jisho": "しゅっちょうする (出張する)"},
             {"word": "のみます I ［くすりを〜］ (飲みます)", "meaning": "吃〔藥〕", "jisho": "のむ (飲む)"},
             {"word": "はいります I ［おふろに〜］ (入ります)", "meaning": "泡（澡）、入浴", "jisho": "はいる (入る)"},
             {"word": "たいせつ［な］ (大切［な］)", "meaning": "重要"},
             {"word": "だいじょうぶ［な］ (大丈夫［な］)", "meaning": "沒問題"},
             {"word": "あぶない (危ない)", "meaning": "危險"},
-            {"word": "きんえん (禁煙)", "meaning": "禁菸"},
+            {"word": "きんえん (禁菸)", "meaning": "禁菸"},
             {"word": "［けんこう］ほけんしょう (［健康］保険証)", "meaning": "健保卡"},
             {"word": "ねつ (熱)", "meaning": "發燒"},
             {"word": "びょうき (病気)", "meaning": "疾病"},
             {"word": "くすり (薬)", "meaning": "藥"},
             {"word": "［お］ふろ", "meaning": "泡澡、澡盆"},
-            {"word": "うわぎ (上着)", "meaning": "上衣、外套"},
-            {"word": "したぎ (下着)", "meaning": "內衣褲"},
+            {"word": "うわぎ (上著)", "meaning": "上衣、外套"},
+            {"word": "したぎ (下著)", "meaning": "內衣褲"},
             {"word": "２、３にち (２、３日)", "meaning": "兩三天"},
             {"word": "２、３〜", "meaning": "兩三〜"},
             {"word": "〜までに", "meaning": "到〜為止（表示時間的期限）"},
@@ -177,7 +177,7 @@ if "vocab_data" not in st.session_state:
             {"word": "［〜が］いたいです。 (［〜が］痛いです。) 【會話】", "meaning": "〔〜〕痛。"},
             {"word": "かぜ 【會話】", "meaning": "感冒"},
             {"word": "それから 【會話】", "meaning": "還有"},
-            {"word": "おだいじに。 (お大事に。) 【會話】", "meaning": "請多保重。（對生病、受傷的人所說的話）"}
+            {"word": "おだいじに。 (お大事に。) 【會話】", "meaning": "請多保重。"}
         ],
         "第18課": [
             {"word": "できます II", "meaning": "能夠、會、可以", "jisho": "できる"},
@@ -202,14 +202,14 @@ if "vocab_data" not in st.session_state:
             {"word": "うま (馬)", "meaning": "馬"},
             {"word": "インターネット", "meaning": "網際網路"},
             {"word": "とくに (特に) 【會話】", "meaning": "特別"},
-            {"word": "へえ 【會話】", "meaning": "哦（用於表示欽佩、驚訝時）"},
+            {"word": "へえ 【會話】", "meaning": "哦"},
             {"word": "それは おもしろいですね。 【會話】", "meaning": "那一定很有意思。"},
-            {"word": "なかなか 【會話】", "meaning": "不輕易、不容易、不簡單（後接否定）"},
+            {"word": "なかなか 【會話】", "meaning": "不輕易、不容易、不簡單"},
             {"word": "ほんとうですか。 【會話】", "meaning": "真的嗎？"},
             {"word": "ぜひ 【會話】", "meaning": "務必"},
             {"word": "ふるさと (故郷) 【關聯單語】", "meaning": "故鄉、家鄉"},
-            {"word": "ビートルズ 【關聯單語】", "meaning": "披頭四（英國著名的樂團）"},
-            {"word": "あきはばら (秋葉原) 【關聯單語】", "meaning": "秋葉原（東京的地名）"}
+            {"word": "ビートルズ 【關聯單語】", "meaning": "披頭四"},
+            {"word": "あきはばら (秋葉原) 【關聯單語】", "meaning": "秋葉原"}
         ],
         "第19課": [
             {"word": "のぼります I (登ります、上ります)", "meaning": "登、上", "jisho": "のぼる (登る、上る)"},
@@ -227,17 +227,17 @@ if "vocab_data" not in st.session_state:
             {"word": "ひ (日)", "meaning": "日、日子"},
             {"word": "ちょうし (調子)", "meaning": "情形、狀況"},
             {"word": "いちど (一度)", "meaning": "一次"},
-            {"word": "いちども (一度も)", "meaning": "連一次也（後接否定）"},
+            {"word": "いちども (一度も)", "meaning": "連一次也"},
             {"word": "だんだん", "meaning": "漸漸、逐漸"},
-            {"word": "もうすぐ", "meaning": "馬上、即將"},
+            {"word": "進み (もうすぐ)", "meaning": "馬上、即將", "jisho": "もうすぐ"},
             {"word": "おかげさまで", "meaning": "託您的福"},
             {"word": "でも", "meaning": "可是、但是、不過"},
             {"word": "かんぱい (乾杯) 【會話】", "meaning": "乾杯"},
             {"word": "ダイエット 【會話】", "meaning": "減肥"},
             {"word": "むり［な］ (無理［な］) 【會話】", "meaning": "勉強"},
-            {"word": "からだに いい (体に いい) 【會話】", "meaning": "對身體好的"},
-            {"word": "とうきょうスカイツリー (東京スカイツリー) 【關聯單語】", "meaning": "晴空塔（位於東京的電波塔）"},
-            {"word": "かつしかほくさい (葛飾北斎) 【關聯單語】", "meaning": "葛飾北齋（1760〜1849、江戶時代有名的浮世繪畫家）"}
+            {"word": "からだに いい (體に いい) 【會話】", "meaning": "對身體好的"},
+            {"word": "とうきょうスカイツリー (東京スカイツリー) 【關聯單語】", "meaning": "晴空塔"},
+            {"word": "かつしかほくさい (葛飾北齋) 【關聯單語】", "meaning": "葛飾北齋"}
         ]
     }
 
@@ -250,7 +250,6 @@ st.sidebar.header("📚 選擇範圍")
 lesson_options = list(st.session_state.vocab_data.keys())
 lesson_choice = st.sidebar.selectbox("你要複習/測驗哪一課？", ["混合模式 (全部)"] + lesson_options)
 
-# 根據選擇準備原始單字池
 if lesson_choice == "混合模式 (全部)":
     raw_pool = []
     for words in st.session_state.vocab_data.values():
@@ -261,9 +260,8 @@ else:
 # --- 3. 模式 A：📖 單字複習 (背單字) ---
 if app_mode == "📖 單字複習 (背單字)":
     st.title("📖 單字複習區")
-    st.markdown(f"**目前範圍：{lesson_choice}** (共 {len(raw_pool)} 個單字)")
+    st.markdown(f"**目前範圍：{lesson_choice}**")
     
-    # 準備顯示用的資料
     display_data = []
     for w in raw_pool:
         display_data.append({
@@ -279,18 +277,15 @@ if app_mode == "📖 單字複習 (背單字)":
 elif app_mode == "📝 測驗考試 (刷題)":
     st.title("📝 通勤刷題神器")
     
-    # 新增測驗目標選項
-    test_target = st.sidebar.radio("測驗目標 (要考什麼？)：", ["考中文解釋", "考動詞辭書形 (僅限動詞)"])
-    test_mode = st.sidebar.radio("題型選擇：", ["選擇題", "手寫/回想題"])
+    test_target = st.sidebar.radio("測驗內容：", ["一般中文/日文測驗", "專攻動詞辭書形"])
+    test_mode = st.sidebar.radio("題型選擇：", ["手寫/回想題 (中翻日)", "選擇題 (日翻中)"])
     
-    # 根據測驗目標過濾題庫
-    if test_target == "考動詞辭書形 (僅限動詞)":
+    if test_target == "專攻動詞辭書形":
         filtered_pool = [w for w in raw_pool if "jisho" in w and w["jisho"]]
     else:
         filtered_pool = raw_pool.copy()
 
-    # 狀態管理
-    state_key = f"{lesson_choice}_{test_target}" # 確保切換目標時重新洗牌
+    state_key = f"{lesson_choice}_{test_target}_{test_mode}"
     if "current_test_pool" not in st.session_state or st.session_state.get('last_state') != state_key:
         random.shuffle(filtered_pool)
         st.session_state.current_test_pool = filtered_pool
@@ -302,12 +297,12 @@ elif app_mode == "📝 測驗考試 (刷題)":
     test_pool = st.session_state.current_test_pool
 
     if not test_pool:
-        st.warning("⚠️ 這個範圍沒有符合條件的單字喔！(例如：這課可能沒有動詞可以考辭書形)")
+        st.warning("⚠️ 這個範圍沒有符合條件的單字喔！")
         st.stop()
 
     if st.session_state.current_idx >= len(test_pool):
-        st.success("🎉 太棒了！這個範圍的題目你都考完囉！")
-        if st.button("🔄 重新打亂再測一次", use_container_width=True):
+        st.success("🎉 太棒了！全部題目都考完囉！")
+        if st.button("🔄 重新挑戰", use_container_width=True):
             st.session_state.current_idx = 0
             random.shuffle(st.session_state.current_test_pool)
             st.rerun()
@@ -315,50 +310,54 @@ elif app_mode == "📝 測驗考試 (刷題)":
 
     current_word = test_pool[st.session_state.current_idx]
     
-    # 決定正確答案是什麼
-    correct_answer = current_word["jisho"] if test_target == "考動詞辭書形 (僅限動詞)" else current_word["meaning"]
-
-    # 顯示進度
     st.progress((st.session_state.current_idx) / len(test_pool))
     st.caption(f"進度: {st.session_state.current_idx + 1} / {len(test_pool)}")
 
     st.markdown("---")
-    st.markdown(f"<h1 style='text-align: center; font-size: 2.5rem;'>{current_word['word']}</h1>", unsafe_allow_html=True)
-    if test_target == "考動詞辭書形 (僅限動詞)":
-        st.markdown("<p style='text-align: center; color: gray;'>請回答這個動詞的「辭書形」</p>", unsafe_allow_html=True)
-    st.markdown("---")
 
-    # 手寫/回想題 UI
-    if test_mode == "手寫/回想題":
+    # --- 邏輯判斷：手寫/回想題 (中翻日) ---
+    if test_mode == "手寫/回想題 (中翻日)":
+        # 顯示中文當題目
+        st.markdown(f"<h3 style='text-align: center; color: gray;'>請回想日文單字：</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center; font-size: 2.8rem;'>{current_word['meaning']}</h1>", unsafe_allow_html=True)
+        st.markdown("---")
+        
         if st.session_state.show_answer:
-            st.markdown(f"<h3 style='text-align: center; color: #4CAF50;'>{correct_answer}</h3>", unsafe_allow_html=True)
+            # 答案顯示日文與辭書形
+            st.markdown(f"<h2 style='text-align: center; color: #4CAF50;'>{current_word['word']}</h2>", unsafe_allow_html=True)
+            if "jisho" in current_word:
+                st.markdown(f"<p style='text-align: center; font-size: 1.5rem;'>辭書形：{current_word['jisho']}</p>", unsafe_allow_html=True)
+            
             st.write("<br>", unsafe_allow_html=True)
             if st.button("⏭️ 下一題", use_container_width=True):
                 st.session_state.current_idx += 1
                 st.session_state.show_answer = False
                 st.rerun()
         else:
-            st.write("<br><br>", unsafe_allow_html=True)
             if st.button("👀 看答案", use_container_width=True):
                 st.session_state.show_answer = True
                 st.rerun()
 
-    # 選擇題 UI
-    elif test_mode == "選擇題":
+    # --- 邏輯判斷：選擇題 (日翻中) ---
+    elif test_mode == "選擇題 (日翻中)":
+        # 顯示日文當題目
+        st.markdown(f"<h3 style='text-align: center; color: gray;'>這單字是什麼意思？</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center; font-size: 2.8rem;'>{current_word['word']}</h1>", unsafe_allow_html=True)
+        st.markdown("---")
+        
+        correct_answer = current_word["jisho"] if test_target == "專攻動詞辭書形" else current_word["meaning"]
+
         if "options" not in st.session_state or st.session_state.get('q_idx_for_options') != st.session_state.current_idx:
-            # 取得干擾選項
-            if test_target == "考動詞辭書形 (僅限動詞)":
+            if test_target == "專攻動詞辭書形":
                 all_possible = [w["jisho"] for w in test_pool if w["jisho"] != correct_answer]
             else:
                 all_possible = [w["meaning"] for w in test_pool if w["meaning"] != correct_answer]
             
-            # 萬一選項不夠的防呆
             while len(all_possible) < 3:
                 all_possible.append(f"隨機選項_{random.randint(1, 99)}")
             
             options = random.sample(all_possible, 3) + [correct_answer]
             random.shuffle(options)
-            
             st.session_state.options = options
             st.session_state.q_idx_for_options = st.session_state.current_idx
             st.session_state.answered_correctly = None
