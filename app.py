@@ -6,7 +6,7 @@ import re
 # --- 網頁基本設定 ---
 st.set_page_config(page_title="日文單字全攻略 (14-19課)", layout="centered")
 
-# --- 1. 史上最完整單字資料庫 (第14-19課) ---
+# --- 1. 完整單字資料庫 (維持 14-19 課完整內容) ---
 if "vocab_data" not in st.session_state:
     st.session_state.vocab_data = {
         "第14課": [
@@ -71,11 +71,11 @@ if "vocab_data" not in st.session_state:
             {"word": "せいひん (製品)", "meaning": "產品", "jisho": ""},
             {"word": "ソフト", "meaning": "軟體", "jisho": ""},
             {"word": "てんしじしょ (電子辞書)", "meaning": "電子辭典", "jisho": ""},
-            {"word": "けいざい (経済)", "meaning": "經濟", "jisho": ""},
+            {"word": "けいざい (經濟)", "meaning": "經濟", "jisho": ""},
             {"word": "しやくしょ (市役所)", "meaning": "市政府、市公所", "jisho": ""},
             {"word": "こうこう (高校)", "meaning": "高中", "jisho": ""},
-            {"word": "はいしゃ (歯医者)", "meaning": "牙醫", "jisho": ""},
-            {"word": "どくしん (独身)", "meaning": "單身、未婚", "jisho": ""},
+            {"word": "はいしゃ (齒醫者)", "meaning": "牙醫", "jisho": ""},
+            {"word": "どくしん (獨身)", "meaning": "單身、未婚", "jisho": ""},
             {"word": "すみません", "meaning": "對不起、抱歉", "jisho": ""},
             {"word": "おもいだします I (思い出します) 【會話】", "meaning": "想起", "jisho": "おもいだす (思い出す)"},
             {"word": "いらっしゃいます I 【會話】", "meaning": "有、在（「います」的尊敬語）", "jisho": "いらっしゃる"},
@@ -91,34 +91,34 @@ if "vocab_data" not in st.session_state:
             {"word": "いれます II (入れます)", "meaning": "放入、插入", "jisho": "いれる (入れる)"},
             {"word": "だします I (出します)", "meaning": "拿出、取出、提交", "jisho": "だす (出す)"},
             {"word": "おろします I ［おかねを～］ (下ろします)", "meaning": "領〔錢〕", "jisho": "おろす (下ろす)"},
-            {"word": "はいります I ［だいがくに～］ (入ります)", "meaning": "上〔大學〕", "jisho": "はいる (入る)"},
+            {"word": "はいります I ［だいがくに～］ (入ります)", "meaning": "上〔大學〕", "jisho": "はいいる (入る)"},
             {"word": "でます II ［だいがくを～］ (出ます)", "meaning": "〔大學〕畢業", "jisho": "でる (出る)"},
             {"word": "おします I (押します)", "meaning": "按、壓、推", "jisho": "おす (押す)"},
             {"word": "のみます I (飲みます)", "meaning": "喝、喝酒", "jisho": "のむ (飲む)"},
             {"word": "はじめます II (始めます)", "meaning": "開始", "jisho": "はじめる (始める)"},
-            {"word": "けんがくします III (見学します)", "meaning": "參觀", "jisho": "けんがくする (見学する)"},
+            {"word": "けんがくします III (見學します)", "meaning": "參觀", "jisho": "けんがくする (見學する)"},
             {"word": "でんわします III (電話します)", "meaning": "打電話", "jisho": "でんわする (電話する)"},
             {"word": "わかい (若い)", "meaning": "年輕", "jisho": ""},
             {"word": "ながい (長い)", "meaning": "長", "jisho": ""},
             {"word": "みじかい (短い)", "meaning": "短", "jisho": ""},
             {"word": "あかるい (明るい)", "meaning": "明亮", "jisho": ""},
             {"word": "くらい (暗い)", "meaning": "昏暗", "jisho": ""},
-            {"word": "からだ (体)", "meaning": "身體", "jisho": ""},
+            {"word": "からだ (體)", "meaning": "身體", "jisho": ""},
             {"word": "あたま (頭)", "meaning": "頭、頭腦", "jisho": ""},
-            {"word": "かみ (髪)", "meaning": "頭髮", "jisho": ""},
+            {"word": "かみ (髮)", "meaning": "頭髮", "jisho": ""},
             {"word": "かお (顔)", "meaning": "臉", "jisho": ""},
             {"word": "め (目)", "meaning": "眼睛", "jisho": ""},
             {"word": "みみ (耳)", "meaning": "耳朵", "jisho": ""},
             {"word": "はな (鼻)", "meaning": "鼻子", "jisho": ""},
             {"word": "くち (口)", "meaning": "嘴巴", "jisho": ""},
-            {"word": "は (歯)", "meaning": "牙齒", "jisho": ""},
+            {"word": "は (齒)", "meaning": "牙齒", "jisho": ""},
             {"word": "おなか", "meaning": "肚子", "jisho": ""},
             {"word": "あし (足)", "meaning": "腳、腿", "jisho": ""},
             {"word": "せ (背)", "meaning": "身高", "jisho": ""},
             {"word": "サービス", "meaning": "服務", "jisho": ""},
             {"word": "ジョギング", "meaning": "慢跑 (～を します：慢跑)", "jisho": ""},
             {"word": "シャワー", "meaning": "淋浴", "jisho": ""},
-            {"word": "みどり (緑)", "meaning": "綠色、綠意", "jisho": ""},
+            {"word": "みどり (綠)", "meaning": "綠色、綠意", "jisho": ""},
             {"word": "［お］てら (［お］寺)", "meaning": "寺廟", "jisho": ""},
             {"word": "じんじゃ (神社)", "meaning": "神社", "jisho": ""},
             {"word": "～ばん (～番)", "meaning": "～號", "jisho": ""},
@@ -138,34 +138,34 @@ if "vocab_data" not in st.session_state:
             {"word": "JR 【關聯】", "meaning": "JR (日本鐵路公司)", "jisho": ""},
             {"word": "雪祭り 【關聯】", "meaning": "雪之慶典", "jisho": ""},
             {"word": "梅田 (大阪的地名) 【關聯】", "meaning": "梅田 (大阪的地名)", "jisho": ""},
-            {"word": "大学前 【關聯】", "meaning": "大學前 (虛構的公車站名)", "jisho": ""}
+            {"word": "大學前 【關聯】", "meaning": "大學前 (虛構的公車站名)", "jisho": ""}
         ],
         "第17課": [
-            {"word": "おぼえます II (覚えます)", "meaning": "記住", "jisho": "おぼえる (覚える)"},
+            {"word": "おぼえます II (覚えます)", "meaning": "記住", "jisho": "おぼえる (覺える)"},
             {"word": "わすれます II (忘れます)", "meaning": "忘記", "jisho": "わすれる (忘れる)"},
             {"word": "なくします I", "meaning": "遺失、丟失", "jisho": "なくす"},
             {"word": "はらいます I (払います)", "meaning": "支付、付款", "jisho": "はらう (払う)"},
             {"word": "かえします I (返します)", "meaning": "歸還、退回", "jisho": "かえす (返す)"},
             {"word": "でかけます II (出かけます)", "meaning": "出門、外出", "jisho": "でかける (出かける)"},
-            {"word": "ぬぎます I (脱ぎます)", "meaning": "脫（衣服、鞋等）", "jisho": "ぬぐ (脱ぐ)"},
+            {"word": "ぬぎます I (脫ぎます)", "meaning": "脫（衣服、鞋等）", "jisho": "ぬぐ (脫ぐ)"},
             {"word": "もって 行きます I (持って 行きます)", "meaning": "帶、拿去", "jisho": "もって いく (持って 行く)"},
-            {"word": "もって 来ます III (持って 来ます)", "meaning": "帶、拿來", "jisho": "もって くる (持って 来る)"},
+            {"word": "もって 來ます III (持って 來ます)", "meaning": "帶、拿來", "jisho": "もって くる (持って 來る)"},
             {"word": "しんぱいします III (心配します)", "meaning": "擔心", "jisho": "しんぱいする (心配する)"},
-            {"word": "ざんぎょうします III (残業します)", "meaning": "加班", "jisho": "ざんぎょうする (残業する)"},
+            {"word": "ざんぎょうします III (殘業します)", "meaning": "加班", "jisho": "ざんぎょうする (殘業する)"},
             {"word": "しゅっちょうします III (出張します)", "meaning": "出差", "jisho": "しゅっちょうする (出張する)"},
-            {"word": "のみます I ［くすりを～］ (飲みます ［薬を～］)", "meaning": "吃〔藥〕", "jisho": "のむ (飲む)"},
+            {"word": "のみます I ［くすりを～］ (飲みます ［藥を～］)", "meaning": "吃〔藥〕", "jisho": "のむ (飲む)"},
             {"word": "はいります I ［おふろに～］ (入ります ［お風呂に～］)", "meaning": "泡（澡）、入浴", "jisho": "はいる (入る)"},
             {"word": "たいせつ［な］ (大切［な］)", "meaning": "重要", "jisho": ""},
             {"word": "だいじょうぶ［な］ (大丈夫［な］)", "meaning": "沒問題", "jisho": ""},
             {"word": "あぶない (危ない)", "meaning": "危險", "jisho": ""},
-            {"word": "きんえん (禁煙)", "meaning": "禁菸", "jisho": ""},
-            {"word": "［健康］保険証", "meaning": "健保卡", "jisho": ""},
+            {"word": "きんえん (禁菸)", "meaning": "禁菸", "jisho": ""},
+            {"word": "［健康］保險證", "meaning": "健保卡", "jisho": ""},
             {"word": "ねつ (熱)", "meaning": "發燒", "jisho": ""},
-            {"word": "びょうき (病気)", "meaning": "疾病", "jisho": ""},
-            {"word": "くすり (薬)", "meaning": "藥", "jisho": ""},
+            {"word": "びょうき (病氣)", "meaning": "疾病", "jisho": ""},
+            {"word": "くすり (藥)", "meaning": "藥", "jisho": ""},
             {"word": "［お］ふろ", "meaning": "泡澡、澡盆", "jisho": ""},
-            {"word": "うわぎ (上着)", "meaning": "上衣、外套", "jisho": ""},
-            {"word": "したぎ (下着)", "meaning": "內衣褲", "jisho": ""},
+            {"word": "うわぎ (上著)", "meaning": "上衣、外套", "jisho": ""},
+            {"word": "したぎ (下著)", "meaning": "內衣褲", "jisho": ""},
             {"word": "２、３にち (２、３日)", "meaning": "兩三天", "jisho": ""},
             {"word": "２、３～", "meaning": "兩三～", "jisho": ""},
             {"word": "～までに", "meaning": "到～為止 (表示時間的期限)", "jisho": ""},
@@ -201,7 +201,7 @@ if "vocab_data" not in st.session_state:
             {"word": "インターネット", "meaning": "網際網路", "jisho": ""},
             {"word": "特に 【會話】", "meaning": "特別", "jisho": ""},
             {"word": "へえ 【會話】", "meaning": "哦 (用於表示欽佩、驚訝時)", "jisho": ""},
-            {"word": "それは おもしろいですね。 【會話】", "meaning": "那一定很有意思。", "jisho": ""},
+            {"word": "那是 おもしろいですね。 【會話】", "meaning": "那一定很有意思。", "jisho": ""},
             {"word": "なかなか 【會話】", "meaning": "不輕易、不容易、不簡單 (後接否定)", "jisho": ""},
             {"word": "ほんとうですか。 【會話】", "meaning": "真的嗎？", "jisho": ""},
             {"word": "ぜひ 【會話】", "meaning": "務必", "jisho": ""},
@@ -219,7 +219,7 @@ if "vocab_data" not in st.session_state:
             {"word": "つよい (強い)", "meaning": "強", "jisho": ""},
             {"word": "よわい (弱い)", "meaning": "弱", "jisho": ""},
             {"word": "れんしゅう (練習)", "meaning": "練習 (～を します：練習)", "jisho": ""},
-            {"word": "ゴルフ", "meaning": "高爾夫 (～を します：打高爾夫)", "jisho": ""},
+            {"word": "ゴルフ", "meaning": "高爾夫 (～宣 します：打高爾夫)", "jisho": ""},
             {"word": "すもう (相撲)", "meaning": "相撲 (～［を］します：相撲)", "jisho": ""},
             {"word": "おちゃ (お茶)", "meaning": "茶、茶道", "jisho": ""},
             {"word": "ひ (日)", "meaning": "日、日子", "jisho": ""},
@@ -233,27 +233,25 @@ if "vocab_data" not in st.session_state:
             {"word": "乾杯 【會話】", "meaning": "乾杯", "jisho": ""},
             {"word": "ダイエット 【會話】", "meaning": "減肥 (～を します：減肥)", "jisho": ""},
             {"word": "無理［な］ 【會話】", "meaning": "勉強", "jisho": ""},
-            {"word": "体に いい 【會話】", "meaning": "對身體好的", "jisho": ""},
+            {"word": "體に いい 【會話】", "meaning": "對身體好的", "jisho": ""},
             {"word": "東京スカイツリー 【關聯】", "meaning": "晴空塔 (位於東京的電波塔)", "jisho": ""},
-            {"word": "葛飾北斎 【關聯】", "meaning": "葛飾北齋 (江戶時代有名的浮世繪畫家)", "jisho": ""}
+            {"word": "葛飾北齋 【關聯】", "meaning": "葛飾北齋 (江戶時代有名的浮世繪畫家)", "jisho": ""}
         ]
     }
 
-# --- 2. 核心比對邏輯 ---
+# --- 2. 輔助函數 ---
 def check_ans(u_input, correct_w):
     if not u_input: return False
     u_input = u_input.strip()
-    # 提取括號內的文字與主文字
     parts = re.findall(r'[^\s\(\)I]+', correct_w)
     return any(u_input == p for p in parts)
 
-# --- 3. 介面與側邊欄 ---
+# --- 3. 介面設定 ---
 st.sidebar.title("📚 日文刷題神器")
 app_mode = st.sidebar.radio("功能切換", ["📖 總單字表", "📝 開始測驗"])
 st.sidebar.write("---")
 lesson_choice = st.sidebar.selectbox("選擇課程", ["混合模式 (全部)"] + list(st.session_state.vocab_data.keys()))
 
-# 根據選擇載入資料
 if lesson_choice == "混合模式 (全部)":
     raw_pool = [w for v in st.session_state.vocab_data.values() for w in v]
 else:
@@ -268,12 +266,12 @@ if app_mode == "📖 總單字表":
 elif app_mode == "📝 開始測驗":
     st.title("📝 通勤隨機刷題")
     test_target = st.sidebar.radio("測驗項目", ["全部單字", "專攻辭書形"])
-    test_type = st.sidebar.radio("考題類型", ["✍️ 填寫題 (中翻日)", "🧠 回想題 (中翻日)", "🔘 選擇題 (日翻中)"])
+    test_type = st.sidebar.radio("考題類型", ["✍️ 填寫題 (中翻日)", "🧠 回想題 (看中文)", "🔘 選擇題 (日翻中)"])
 
     # 過濾題庫
     pool = [w for w in raw_pool if w.get('jisho')] if test_target == "專攻辭書形" else raw_pool
 
-    # 初始化狀態
+    # 初始化狀態 (關鍵：新增 checked 狀態)
     key = f"test_{lesson_choice}_{test_target}_{test_type}"
     if "test_pool" not in st.session_state or st.session_state.get('last_key') != key:
         shuffled = pool.copy()
@@ -282,12 +280,14 @@ elif app_mode == "📝 開始測驗":
         st.session_state.idx = 0
         st.session_state.last_key = key
         st.session_state.show_answer = False
+        st.session_state.checked = False
 
     t_pool = st.session_state.test_pool
     if st.session_state.idx >= len(t_pool):
         st.success("🎉 全部考完囉！")
         if st.button("🔄 再考一次"):
             st.session_state.idx = 0
+            st.session_state.checked = False
             random.shuffle(st.session_state.test_pool)
             st.rerun()
         st.stop()
@@ -296,36 +296,52 @@ elif app_mode == "📝 開始測驗":
     st.progress(st.session_state.idx / len(t_pool))
     st.markdown("---")
 
-    # A. 填寫題
+    # A. ✍️ 填寫題 (修正邏輯)
     if test_type == "✍️ 填寫題 (中翻日)":
         st.subheader(f"題目：{curr['meaning']}")
         ans = st.text_input("請輸入日文答案...", key=f"ans_{st.session_state.idx}")
-        if st.button("✅ 檢查答案"):
+        
+        # 顯示「檢查」與「跳過」按鈕
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("✅ 檢查答案", use_container_width=True):
+                st.session_state.checked = True
+        with col2:
+            if st.button("⏭️ 下一題/跳過", use_container_width=True):
+                st.session_state.idx += 1
+                st.session_state.checked = False
+                st.rerun()
+
+        # 點擊檢查後顯示結果與確切的下一題按鈕
+        if st.session_state.checked:
             target = curr['jisho'] if test_target == "專攻辭書形" else curr['word']
             if check_ans(ans, target):
-                st.success(f"答對了！答案是：{target}")
-                if st.button("下一題"):
-                    st.session_state.idx += 1
-                    st.rerun()
+                st.success(f"✅ 答對了！答案是：{target}")
             else:
-                st.error(f"錯囉！提示：{curr['word']}")
+                st.error(f"❌ 錯囉！正確答案包含：{curr['word']}")
+            
+            # 把「確認下一題」按鈕放在檢查邏輯之外，保證它點擊時能觸發頁面刷新
+            if st.button("點此進入下一題 ⏭️", type="primary", use_container_width=True):
+                st.session_state.idx += 1
+                st.session_state.checked = False
+                st.rerun()
 
-    # B. 回想題
-    elif test_type == "🧠 回想題 (中翻日)":
+    # B. 🧠 回想題 (原本邏輯)
+    elif test_type == "🧠 回想題 (看中文)":
         st.subheader(f"題目：{curr['meaning']}")
         if st.session_state.show_answer:
             st.markdown(f"### 答案：{curr['word']}")
             if curr.get('jisho'): st.write(f"辭書形：{curr['jisho']}")
-            if st.button("⏭️ 下一題"):
+            if st.button("⏭️ 下一題", use_container_width=True):
                 st.session_state.idx += 1
                 st.session_state.show_answer = False
                 st.rerun()
         else:
-            if st.button("👀 看答案"):
+            if st.button("👀 看答案", use_container_width=True):
                 st.session_state.show_answer = True
                 st.rerun()
 
-    # C. 選擇題
+    # C. 🔘 選擇題 (原本邏輯)
     elif test_type == "🔘 選擇題 (日翻中)":
         st.subheader(f"日文：{curr['word']}")
         correct = curr['jisho'] if test_target == "專攻辭書形" else curr['meaning']
@@ -339,8 +355,9 @@ elif app_mode == "📝 開始測驗":
             if st.button(o, use_container_width=True):
                 if o == correct:
                     st.success("✅ 正確！")
-                    if st.button("下一題"):
-                        st.session_state.idx += 1
-                        st.rerun()
                 else:
                     st.error(f"❌ 錯誤！正確答案是：{correct}")
+                
+                if st.button("下一題 ⏭️"):
+                    st.session_state.idx += 1
+                    st.rerun()
